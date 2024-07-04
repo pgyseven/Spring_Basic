@@ -73,7 +73,9 @@ public class HomeController { //홈컨트롤클래스는 언제 객체화 되냐
 	}
 
 	@RequestMapping ("/ex5") //위의 model 객체와 같은 기능이다 아래와 같이 model view를 써도 안써도 되지만 이런것도 있다. 알아둬야 한다 현업에서는 누군가 이걸 사용하니깐
-	public ModelAndView exModelAndView() { //Ctrl 누르고 모델뷰위에 마우스를 올리고 API를 확인한다. (새창이 뜰거임) Open Implementation를 클릭하면 여러 메소드 중에 ModelAndView(String viewName, Map<String, ?> model) 이 메소드를 사용할 것 해당 메소드에서 map이라는 건, 키와 데이터의 쌍으로 관리하는게 mapp 데이터를 한번에 모아서 관리할 수 있는 컬렉션
+	public ModelAndView exModelAndView() { //Ctrl 누르고 모델뷰위에 마우스를 올리고 API를 확인한다. (새창이 뜰거임) Open Implementation를 클릭하면 
+		//여러 메소드 중에 ModelAndView(String viewName, Map<String, ?> model) 이 메소드를 사용할 것 해당 메소드에서 map이라는 건, 
+		//키와 데이터의 쌍으로 관리하는게 mapp 데이터를 한번에 모아서 관리할 수 있는 컬렉션
 		
 		//ModelAndView 객체 : 출력될 view 단의 이름과, 출력될 데이터(model)을 가지고 있는 객체
 		
@@ -88,10 +90,7 @@ public class HomeController { //홈컨트롤클래스는 언제 객체화 되냐
 		 * m.addObject("name","dooly");
 		 */
 		
-		
-		
 		return new ModelAndView("ex5", model);
-		
 		
 	}
 
