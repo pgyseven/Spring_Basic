@@ -24,6 +24,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- 아래의 패키지를 조사(scan)하여 필요한 객체들을 메모리에 적재하여 동작하도록 --> 
 	<context:component-scan base-package="com.webpgy.controller" />
 	
 	
