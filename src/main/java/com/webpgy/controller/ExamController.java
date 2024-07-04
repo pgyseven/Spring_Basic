@@ -70,7 +70,12 @@ public class ExamController {
 		msg = "success";
 		
 	}
-	redirectAttributes.addAttribute("status",msg); //?status 쿼리 스트링 물음표 다음에 나오는게 쿼리 스트링 이렇게 하면 http://localhost:8081/controller/?status=success 리다이렉트에서 home의 주소에 이렇게 붙어있게 된다.
+	//redirectAttributes.addAttribute("status",msg); //?status 쿼리 스트링 물음표 다음에 나오는게 쿼리 스트링 이렇게 하면 http://localhost:8081/controller/?status=success 리다이렉트에서 home의 주소에 이렇게 붙어있게 된다.
+	//status 라는 변수의 값이 msg 로..(쿼리 스트링으로 추가됨)
+	
+	redirectAttributes.addFlashAttribute("status",msg); //변조하지 않게 하기 위해서! 즉 보안적으로 우수하게 하기 위해서 이렇게 하면 눈으로는 안보임 즉 그냥 바인딩만 된거임 <div>${status }</div> 해서 home에 넣으면 페이지에 success 라고만 뜸
+	//status 라는 변수의 값이 msg로...(쿼리 스트링으로 추가 되지 않고 그냥 바인딩) 
+	
 	return "redirect:/"; //다른 컨트롤러 단으로 이동 가능하다 분리하라고 이렇게 한 것이다. 회원관리, 게시판 이런식으로 해당 기능의 컨트롤러가 있을거니깐 컨트롤러가 여러개 일 수 있고 호출이 가능하다.
 	
 	
