@@ -127,6 +127,14 @@
 			<scope>provided</scope>
 		</dependency>
 
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind 
+자바 객체를 json 쉽게 변환새주는 라이브러리-->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.16.1</version>
+</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>

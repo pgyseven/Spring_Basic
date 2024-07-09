@@ -1,0 +1,10 @@
+{
+    "empno" : 7369 ,
+    "ename" : "smith" ,
+    "job" : "manger" ,
+    "mgr" : 7330 ,
+    "hiredate" : "2023-12-12" ,
+    "sal" : 1000 ,
+    "comm" : 0 ,
+    "deptNo" : 10 
+}

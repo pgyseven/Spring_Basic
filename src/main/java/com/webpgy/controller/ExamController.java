@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webpgy.model.ProductVO;
@@ -71,7 +72,7 @@ public class ExamController {
 		
 	}
 	//redirectAttributes.addAttribute("status",msg); //?status 쿼리 스트링 물음표 다음에 나오는게 쿼리 스트링 이렇게 하면 http://localhost:8081/controller/?status=success 리다이렉트에서 home의 주소에 이렇게 붙어있게 된다.
-	//status 라는 변수의 값이 msg 로..(쿼리 스트링으로 추가됨)
+	//status 라는 변수의 값이 msg 로..(쿼리 스트링으로 추가됨) //쿼리 스트링 잘 모르겠으면 네이버에서 날씨라 검색 하면 주소에 날씨라 마지막에 보이는데 그게 쿼리이다. https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EB%82%A0%EC%94%A8
 	
 	redirectAttributes.addFlashAttribute("status",msg); //변조하지 않게 하기 위해서! 즉 보안적으로 우수하게 하기 위해서 이렇게 하면 눈으로는 안보임 즉 그냥 바인딩만 된거임 <div>${status }</div> 해서 home에 넣으면 페이지에 success 라고만 뜸
 	//status 라는 변수의 값이 msg로...(쿼리 스트링으로 추가 되지 않고 그냥 바인딩) 
@@ -82,5 +83,20 @@ public class ExamController {
 	
 	}
 	
+	//ProductVO 객체를 json으로 변환하여 출력해보기 앞전에 jackson-databind를 pom.xml에 추가
+	@RequestMapping("/outputJsonProduct")
+	public @ResponseBody ProductVO outputJsonProduct() {  //ProductVO를 변환하여 @ResponseBody 제이슨 반환
+		// 위의 반환값 타입에 @ResponseBody ProductVO (ProductVO 객체를 json으로 변환아여 반환 하라는 의미
+		
+		
+		
+		ProductVO p = new ProductVO("250705_2","양파링",2,2500,"맛나용");
+		// 결과값 ProductVO(productNo=250705_2, productName=양파링, qty=2, price=2500, productNickName=맛나용)
+		
+		System.out.println(p.toString());
+		
+		return p;
+		
+	}
 	
 }
